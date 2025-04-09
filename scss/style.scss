@@ -1,12 +1,354 @@
-$primary-color: #3498db;
+$primary-color: #00945F;
+$secondary-color: #888888;
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  color: $primary-color;
 
-  h1 {
-    font-size: 2rem;
+
+@import url('https://fonts.cdnfonts.com/css/arial-2');
+$font-family: 'Arial', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+}
+a,
+p,
+h2,
+h3 {
+  font-family: $font-family ;
+}
+
+header {
+  padding: 20px 50px;
+
+  .logo {
+    width: 250px;
+  }
+}
+
+.hero-section {
+  background-image: url(../images/hero-img.png);
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.content-section {
+  padding: 50px 100px;
+
+  .info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+
+  .content-heading {
+    color: $primary-color;
     text-align: center;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background-color: $primary-color;
+      bottom: -10px;
+      left: calc(50% - 25px);
+    }
+  }
+
+  .content-text {
+    font-size: 1rem;
+    color: $secondary-color;
+  }
+
+  .btn-primary {
+    background-color: #E97300;
+    padding: 1rem 2rem;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    line-height: 1;
+    margin-top: 3rem;
+  }
+
+  .service {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    margin-top: 3rem;
+
+    .service-content {
+      flex: 1;
+      max-width: calc(50% - 1px);
+      min-width: calc(50% - 1px);
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        padding-right: 2rem;
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        padding-left: 2rem;
+      }
+
+      &.border-right {
+        border-right: 1px solid $secondary-color;
+      }
+
+      h3 {
+        color: $primary-color;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      a {
+        color: #51e600;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+
+.teams-section {
+  padding: 50px 100px;
+
+  .info-card {
+    width: 100%;
+
+    .card-head {
+      width: 100%;
+      background-color: $primary-color;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    .card-content {
+      background-color: #EBF7F5;
+      padding: 1rem 4rem;
+
+      p {
+        margin: 0;
+        font-size: 1rem;
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.teams-contain {
+  display: flex;
+  margin-top: 2rem;
+  gap: 1rem;
+
+  .team {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+
+    .tm-name {
+      color: $primary-color;
+    }
+
+    .text {
+      padding: 0 1rem;
+      color: #555454;
+    }
+
+    &.w-25 {
+      max-width: 25%;
+    }
+
+    &.w-50 {
+      max-width: 50%;
+
+      .text {
+        padding: 0 7rem;
+      }
+
+    }
+
+  }
+}
+
+footer {
+  border-top: 1px solid $primary-color;
+  padding: 50px 100px;
+
+  .social-icon {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+    color: $secondary-color;
+
+    a {
+      color: rgb(101, 101, 101);
+    }
+  }
+
+  .links a {
+    color: black;
+    font-size: 1rem;
+    text-decoration: none;
+    padding-right: 1rem;
+    font-weight: bold;
+
+    &:nth-child(1) {
+      border-right: 1px solid;
+      margin-right: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width:600px) and (max-width:990px) {
+
+  header {
+    padding: 20px 30px;
+  }
+
+  .hero-section {
+    height: 320px;
+  }
+
+  .content-section,
+  .teams-section,
+  footer {
+    padding: 30px;
+  }
+
+  .teams-contain .team.w-50 .text,
+  .teams-contain .team.w-25 .text {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width:600px) {
+
+  header {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+
+    .logo {
+      width: 150px;
+    }
+  }
+
+  .hero-section {
+    background-image: url(../images/hero-img-sm.png);
+    background-size: contain;
+    height: 330px;
+  }
+
+  .content-section {
+    padding: 20px;
+
+    .btn-primary {
+      margin-top: 2rem;
+    }
+
+    .service {
+      row-gap: 1rem;
+
+      .service-content {
+        flex: 1;
+        padding-bottom: 1rem;
+        max-width: calc(100%);
+        min-width: calc(100%);
+        border-bottom: 1px solid $secondary-color;
+
+        &:nth-child(1),
+        &:nth-child(3) {
+          padding-right: 0;
+        }
+
+        &:nth-child(2),
+        &:nth-child(4) {
+          padding-left: 0;
+        }
+
+        &.border-right {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  .teams-section {
+    padding: 20px;
+
+    .info-card {
+      .card-head {
+        padding: 1rem;
+      }
+
+      .card-content {
+        background-color: #EBF7F5;
+        padding: 1rem;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .teams-contain {
+    flex-direction: column;
+
+    .team {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+
+      .tm-name {
+        color: $primary-color;
+      }
+
+      .text {
+        padding: 0 1rem;
+        color: #555454;
+      }
+
+      &.w-25 {
+        max-width: 100%;
+      }
+
+      &.w-50 {
+        max-width: 100%;
+
+        .text {
+          padding: 0 1rem;
+        }
+      }
+
+    }
+  }
+
+  footer {
+    padding: 20px;
   }
 }
