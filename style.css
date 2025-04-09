@@ -22,7 +22,7 @@ header .logo {
 }
 
 .hero-section {
-  background-image: url(../images/hero-img.png);
+  background-image: url(./images/hero-img.png);
   width: 100%;
   height: 600px;
   background-size: cover;
@@ -210,7 +210,7 @@ footer .links a:nth-child(1) {
     width: 150px;
   }
   .hero-section {
-    background-image: url(../images/hero-img-sm.png);
+    background-image: url(./images/hero-img-sm.png);
     background-size: contain;
     height: 330px;
   }
